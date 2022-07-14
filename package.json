@@ -1,12 +1,14 @@
 {
     "name": "hardhat-tiger-men-ath-starter",
     "scripts": {
-        "compile": "hardhat compile",
+        "compile": "hardhat clean & prettier --write 'contracts/**/*.sol' & hardhat compile",
         "test": "hardhat test",
         "lint": "hardhat lint",
         "coverage": "hardhat coverage",
         "coverage-report": "hardhat coverage-report",
         "coverage-upload": "hardhat coverage-upload",
+        "fork-bsc97": "hardhat node --fork https://data-seed-prebsc-2-s1.binance.org:8545",
+        "fork-bsc": "hardhat node --fork https://data-seed-prebsc-2-s1.binance.org:8545",
         "remixd": "remixd -s ./ -u https://remix.ethereum.org"
     },
     "devDependencies": {
@@ -22,6 +24,7 @@
         "@types/node": "^12.20.52",
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "@typescript-eslint/parser": "^4.33.0",
+        "hardhat-abi-exporter": "^2.10.0",
         "chai": "^4.3.6",
         "dotenv": "^16.0.1",
         "ethereum-waffle": "^3.4.4",
@@ -37,6 +40,7 @@
         "typescript": "^4.6.4"
     },
     "dependencies": {
-        "@openzeppelin/contracts-upgradeable": "^4.6.0"
+        "@openzeppelin/contracts-upgradeable": "^4.6.0",
+        "@nomiclabs/hardhat-ganache": "^2.0.1"
     }
 }
